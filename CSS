@@ -1,0 +1,58 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+#bill-form {
+	width: 50%;
+	margin: 40px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#bill-form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+#bill-form input[type="text"], #bill-form input[type="number"], #bill-form select {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+
+#bill-form input[type="submit"], #bill-form input[type="reset"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	cursor: pointer;
+}
+
+#bill-form input[type="submit"]:hover, #bill-form input[type="reset"]:hover {
+	background-color: #3e8e41;
+}
+
+#result {
+	margin-top: 40px;
+}
+
+#bill-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#bill-table th, #bill-table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+#bill-table th {
+	background-color: #f0f0f0;
+}
