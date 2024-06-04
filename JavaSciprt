@@ -1,0 +1,47 @@
+document.getElementById('bill-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    const name = document.getElementById('name').value;
+    const category = document.getElementById('category').value;
+    const periode = document.getElementById('periode').value;
+    const jumlahPemakaian = document.getElementById('jumlah-pemakaian').value;
+  
+    let abodemen, tarifPerKwh, pajak, subTotal;
+  
+    // Tarif dan pajak berdasarkan kategori
+    if (category === 'Abodemen') {
+      abodemen = 15000;
+      tarifPerKwh = 1200;
+      pajak = 0.1;
+    } else if (category === 'Rumah Tangga') {
+      abodemen = 25000;
+      tarifPerKwh = 1500;
+      pajak = 0.15;
+    } else if (category === 'Industri') {
+      abodemen = 50000;
+      tarifPerKwh = 2000;
+      pajak = 0.2;
+    }
+  
+    // Hitung sub total
+    subTotal = (tarifPerKwh * jumlahPemakaian) + abodemen;
+  
+    // Hitung pajak
+    pajak = subTotal * pajak;
+  
+    // Hitung total
+    const total = subTotal + pajak;
+  
+    // Tampilkan hasil
+    document.getElementById('bill-table-body').innerHTML = `
+      <tr>
+        <td>${name}</td>
+        <td>${category}</td>
+        <td>${jumlahPemakaian}</td>
+        <td>${abodemen}</td>
+        <td>${tarifPerKwh}</td>
+        <td>${pajak.toFixed(2)}</td>
+        <td>${total.toFixed(2)}</td>
+      </tr>
+    `;
+  });
